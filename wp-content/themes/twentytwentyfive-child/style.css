@@ -1,0 +1,491 @@
+/*
+Theme Name:   TwentyTwentyFive Child - VENA
+Theme URI:    https://venatictundra22.com
+Description:  Thème enfant personnalisé pour venatictundra22.com
+Author:       VenaticTundra22
+Author URI:   https://venatictundra22.com
+Template:     twentytwentyfive
+Version:      1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  twentytwentyfive-child
+*/
+
+/* ══════════════════════════════════════════════════════════════
+   VARIABLES
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+    --font-titre: "Space Grotesk", system-ui, sans-serif;
+    --couleur-fond: #0b0b0c;
+    --couleur-surface: #141416;
+    --couleur-texte: #f2f2f2;
+    --couleur-texte-discret: #a8a8a8;
+    --couleur-bordure: #26262a;
+    --couleur-accent: #6c63ff;
+    --couleur-accent-texte: #ffffff;
+    --arrondi: 6px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BASE
+   ══════════════════════════════════════════════════════════════ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--couleur-fond);
+    color: var(--couleur-texte);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EN-TÊTE
+   ══════════════════════════════════════════════════════════════ */
+
+header {
+    background: var(--couleur-fond);
+    border-bottom: 1px solid var(--couleur-bordure);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+}
+
+.conteneur {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.sur-titre {
+    font-family: var(--font-titre);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--couleur-accent);
+}
+
+.entete-barre {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-titre);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+    color: var(--couleur-texte);
+}
+
+nav {
+    display: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    font-size: 0.875rem;
+    color: #c2c2c2;
+}
+
+nav a:hover,
+nav a.actif {
+    color: var(--couleur-texte);
+}
+
+.separateur {
+    color: #8a8a90;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+    nav {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.actions-entete {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.bouton {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--arrondi);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.bouton-principal {
+    background: var(--couleur-accent);
+    color: var(--couleur-accent-texte);
+}
+
+.bouton-principal:hover {
+    opacity: 0.9;
+}
+
+.bouton-discret {
+    color: var(--couleur-texte-discret);
+}
+
+.bouton-discret:hover {
+    color: var(--couleur-texte);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BANNIÈRE D'ACCUEIL
+   ══════════════════════════════════════════════════════════════ */
+
+.bandeau-accueil {
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding: 5rem 0;
+    background-image: linear-gradient(to right, rgba(11, 11, 12, 0.95), rgba(11, 11, 12, 0.4)), url('assets/iut_lille.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.bandeau-accueil h1 {
+    margin: 1rem 0 0;
+    font-family: var(--font-titre);
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 34rem;
+    color: var(--couleur-texte);
+}
+
+.bandeau-accueil p {
+    margin-top: 1rem;
+    max-width: 30rem;
+    color: var(--couleur-texte-discret);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTIONS
+   ══════════════════════════════════════════════════════════════ */
+
+.bloc {
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding: 3.5rem 0 4rem;
+}
+
+.titre-section {
+    font-family: var(--font-titre);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--couleur-accent);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PROJETS
+   ══════════════════════════════════════════════════════════════ */
+
+.grille-projets {
+    margin-top: 1.75rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .grille-projets {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.carte-projet {
+    display: block;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--arrondi);
+    background: var(--couleur-surface);
+    padding: 1.5rem;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.carte-projet:hover {
+    border-color: var(--couleur-accent);
+}
+
+.apercu-projet {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--couleur-fond);
+    border: 1px solid var(--couleur-bordure);
+    margin-bottom: 1rem;
+}
+
+.categorie-projet {
+    display: block;
+    font-family: var(--font-titre);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--couleur-accent);
+}
+
+.titre-projet {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: var(--font-titre);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--couleur-texte);
+}
+
+.texte-projet {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--couleur-texte-discret);
+}
+
+.lien-projet {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--couleur-texte-discret);
+    opacity: 0.8;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   OUTILS
+   ══════════════════════════════════════════════════════════════ */
+
+.grille-outils {
+    margin-top: 1.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .grille-outils {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.carte-outil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.25rem 0.75rem;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--arrondi);
+    background: var(--couleur-surface);
+    text-align: center;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.carte-outil:hover {
+    border-color: var(--couleur-accent);
+    transform: translateY(-2px);
+}
+
+.icone-outil {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--couleur-accent) 16%, transparent);
+    font-family: var(--font-titre);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--couleur-accent);
+}
+
+.nom-outil {
+    font-family: var(--font-titre);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    color: var(--couleur-texte);
+}
+
+.barres-competences {
+    width: 100%;
+    margin-top: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.label-competence {
+    font-size: 0.625rem;
+    color: var(--couleur-texte-discret);
+    text-align: left;
+    margin-bottom: 0.15rem;
+}
+
+.piste-competence {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--couleur-bordure);
+    overflow: hidden;
+}
+
+.remplissage-competence {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--couleur-accent);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   À PROPOS
+   ══════════════════════════════════════════════════════════════ */
+
+.bloc-a-propos {
+    text-align: center;
+}
+
+.bloc-a-propos .titre-section {
+    justify-content: center;
+}
+
+.bloc-a-propos h2 {
+    margin: 1rem auto 0;
+    font-family: var(--font-titre);
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--couleur-texte);
+}
+
+.bloc-a-propos p {
+    margin: 0.75rem auto 0;
+    max-width: 34rem;
+    color: var(--couleur-texte-discret);
+}
+
+.liste-competences {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--couleur-bordure);
+    color: var(--couleur-texte-discret);
+}
+
+.liste-liens {
+    margin-top: 1.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.liste-liens a {
+    font-size: 0.875rem;
+    color: var(--couleur-accent);
+}
+
+.liste-liens a:hover {
+    text-decoration: underline;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════════════════════════════════ */
+
+.apparition {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apparition.est-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bandeau-accueil.apparition {
+    transition-delay: 0.05s;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PIED DE PAGE
+   ══════════════════════════════════════════════════════════════ */
+
+footer {
+    background: var(--couleur-fond);
+    border-top: 1px solid var(--couleur-bordure);
+    padding: 1.75rem 0;
+    color: var(--couleur-texte);
+}
+
+.pied-barre {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.liens-pied {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.liens-pied a {
+    font-size: 0.8125rem;
+    color: var(--couleur-texte-discret);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.liens-pied a:hover {
+    color: var(--couleur-texte);
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: var(--couleur-texte-discret);
+}

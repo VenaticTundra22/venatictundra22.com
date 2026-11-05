@@ -1,0 +1,76 @@
+# ============================================
+# venatictundra22.com .gitignore
+# Dernière mise à jour : 2026-09-25
+# ============================================
+
+# ---------------------------
+# SECRETS (CRITIQUE — JAMAIS DANS GIT)
+# ---------------------------
+.env
+.env.local
+.env.production
+*.pem
+*.key
+id_ed25519*
+
+# ---------------------------
+# WORDPRESS CORE
+# ---------------------------
+wp-admin/
+wp-includes/
+wp-config.php
+wp-config-sample.php
+
+# ---------------------------
+# WORDPRESS — Fichiers générés / cache
+# ---------------------------
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
+wp-content/cache/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/index.php
+wp-content/languages/
+wp-content/litespeed/
+wp-content/.litespeed_conf.dat
+
+# ---------------------------
+# WORDPRESS — Thèmes tiers
+# ---------------------------
+wp-content/themes/*
+!wp-content/themes/twentytwentyfive-child/
+
+# ---------------------------
+# WORDPRESS — Plugins tiers
+# ---------------------------
+wp-content/plugins/*
+!wp-content/plugins/portfolio-projets/
+
+# ---------------------------
+# DOCKER — Données persistantes BDD
+# ---------------------------
+db_data/
+
+# ---------------------------
+# BACKUPS LOCAUX
+# ---------------------------
+*.sql
+*.sql.gz
+*.tar.gz
+backups/
+*.bak
+
+# ---------------------------
+# SYSTÈME & ÉDITEURS
+# ---------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.log

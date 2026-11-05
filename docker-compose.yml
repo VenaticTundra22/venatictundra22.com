@@ -1,0 +1,45 @@
+# ==============================================
+# Infrastructure venatictundra22.com
+# ==============================================
+
+services:
+
+  # ---- WordPress ----
+  wordpress:
+    image: wordpress:${WORDPRESS_VERSION}
+    container_name: site-principal
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/9000' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_CONFIG_EXTRA: "define('DISALLOW_FILE_EDIT', true);"
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./php-custom/security.ini:/usr/local/etc/php/conf.d/security.ini:ro
+    networks:
+      - frontend
+      - backend
+
+# ---- Réseaux partagés ----
+networks:
+  frontend:
+    name: frontend
+    external: true
+  backend:
+    name: backend
+    external: true
+
+# ---- Volumes persistants ----
+volumes:
+  wordpress_data:
+    name: site-principal-data
+    external: true
